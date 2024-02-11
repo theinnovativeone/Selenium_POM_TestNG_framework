@@ -21,19 +21,22 @@ public class AddToCartTests extends BaseTest{
 	
 	@Test(dataProvider = "searchkey")
 	public void addToCart(String searchkey, ITestContext context) throws InterruptedException {
-		sp = new SearchingPage(driver);
-		pdp = new ProductDetailsPage(driver);
-		acp = new AddToCartPage(driver);
+		sp = new SearchingPage(context);
+		pdp = new ProductDetailsPage(context);
+		acp = new AddToCartPage(context);
 		
 		sp.search(searchkey);
 		pdp.openPDP(context);
 		
 		Thread.sleep(5000);
-		String ProductTitleOnPDP = pdp.getProductTitleOnPDP();
+		String ProductTitleOnPDP = pdp.getProductTitleOnPDP(context);
 		System.out.println("ProductTitleOnPDP " + ProductTitleOnPDP);
-		acp.clickOnAddToCart();
 		
-		acp.goTOCart();
+		Thread.sleep(5000);
+		acp.clickOnAddToCart(context);
+		
+		Thread.sleep(5000);
+		acp.goTOCart(context);
 		
 		String ProductTitleInCart = acp.getProductTitleInCart();
 		System.out.println("ProductTitleInCart " + ProductTitleInCart);

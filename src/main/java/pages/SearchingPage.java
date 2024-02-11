@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 import base.BasePage;
 
@@ -17,8 +18,8 @@ public class SearchingPage extends BasePage{
 	
 	@FindBy(css = "span.a-color-state.a-text-bold") WebElement searchResultsKeyword;
 	
-	public SearchingPage(WebDriver driver) {
-		this.driver = driver;
+	public SearchingPage(ITestContext context) {
+		this.driver = (WebDriver) context.getAttribute("WebDriver");;
 		PageFactory.initElements(driver, this);
 	}
 	

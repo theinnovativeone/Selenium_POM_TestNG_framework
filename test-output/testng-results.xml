@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-28T17:07:06 IST" name="Suite" finished-at="2024-01-28T17:07:39 IST" duration-ms="32676">
+  <suite started-at="2024-02-11T23:37:00 IST" name="Default suite" finished-at="2024-02-11T23:38:17 IST" duration-ms="76715">
     <groups>
     </groups>
-    <test started-at="2024-01-28T17:07:06 IST" name="Test" finished-at="2024-01-28T17:07:39 IST" duration-ms="32676">
+    <test started-at="2024-02-11T23:37:00 IST" name="Default test" finished-at="2024-02-11T23:38:17 IST" duration-ms="76715">
       <class name="tests.AddToCartTests">
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@5a56cdac]" started-at="2024-01-28T17:07:07 IST" name="setUp" finished-at="2024-01-28T17:07:13 IST" duration-ms="6336" status="PASS">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@434a63ab]" started-at="2024-02-11T23:37:01 IST" name="setUp" finished-at="2024-02-11T23:37:06 IST" duration-ms="4525" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@43a09ce2]]>
+                <![CDATA[org.testng.TestRunner@24534cb0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCart(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@5a56cdac]" started-at="2024-01-28T17:07:13 IST" name="addToCart" data-provider="searchkey" finished-at="2024-01-28T17:07:23 IST" duration-ms="10111" status="FAIL">
+        <test-method signature="addToCart(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@434a63ab]" started-at="2024-02-11T23:37:06 IST" name="addToCart" data-provider="searchkey" finished-at="2024-02-11T23:37:35 IST" duration-ms="29741" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -27,32 +27,32 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@43a09ce2]]>
+                <![CDATA[org.testng.TestRunner@24534cb0]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='productTitle']"}
-  (Session info: MicrosoftEdge=121.0.2277.83)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]"}
+  (Session info: MicrosoftEdge=121.0.2277.112)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [ee926135132efe4e037d633fd7b65b12, findElement {using=xpath, value=//span[@id='productTitle']}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51731}, msedge: {msedgedriverVersion: 121.0.2277.83 (ff4586e3b035..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51731/devtoo..., se:cdpVersion: 121.0.2277.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ee926135132efe4e037d633fd7b65b12]]>
+Command: [661bd1d4702e266e331194c61b992ff4, findElement {using=xpath, value=//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.112, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62439}, msedge: {msedgedriverVersion: 121.0.2277.112 (c44bb51ada3..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62439/devtoo..., se:cdpVersion: 121.0.2277.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 661bd1d4702e266e331194c61b992ff4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='productTitle']"}
-  (Session info: MicrosoftEdge=121.0.2277.83)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]"}
+  (Session info: MicrosoftEdge=121.0.2277.112)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [ee926135132efe4e037d633fd7b65b12, findElement {using=xpath, value=//span[@id='productTitle']}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51731}, msedge: {msedgedriverVersion: 121.0.2277.83 (ff4586e3b035..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51731/devtoo..., se:cdpVersion: 121.0.2277.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ee926135132efe4e037d633fd7b65b12
+Command: [661bd1d4702e266e331194c61b992ff4, findElement {using=xpath, value=//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.112, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62439}, msedge: {msedgedriverVersion: 121.0.2277.112 (c44bb51ada3..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62439/devtoo..., se:cdpVersion: 121.0.2277.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 661bd1d4702e266e331194c61b992ff4
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -72,9 +72,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 at jdk.proxy2/jdk.proxy2.$Proxy17.getText(Unknown Source)
-at base.BasePage.getElementText(BasePage.java:44)
-at pages.ProductDetailsPage.getProductTitleOnPDP(ProductDetailsPage.java:38)
-at tests.AddToCartTests.addToCart(AddToCartTests.java:32)
+at pages.AddToCartPage.goTOCart(AddToCartPage.java:36)
+at tests.AddToCartTests.addToCart(AddToCartTests.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -109,22 +108,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.AddToCartTests@5a56cdac]" started-at="2024-01-28T17:07:23 IST" name="teardown" finished-at="2024-01-28T17:07:24 IST" duration-ms="310" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.AddToCartTests@434a63ab]" started-at="2024-02-11T23:37:35 IST" name="teardown" finished-at="2024-02-11T23:37:36 IST" duration-ms="679" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@5a56cdac]" started-at="2024-01-28T17:07:24 IST" name="setUp" finished-at="2024-01-28T17:07:29 IST" duration-ms="5277" status="PASS">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@434a63ab]" started-at="2024-02-11T23:37:36 IST" name="setUp" finished-at="2024-02-11T23:37:40 IST" duration-ms="3412" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@43a09ce2]]>
+                <![CDATA[org.testng.TestRunner@24534cb0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCart(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@5a56cdac]" started-at="2024-01-28T17:07:29 IST" name="addToCart" data-provider="searchkey" finished-at="2024-01-28T17:07:38 IST" duration-ms="9184" status="FAIL">
+        <test-method signature="addToCart(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.AddToCartTests@434a63ab]" started-at="2024-02-11T23:37:40 IST" name="addToCart" data-provider="searchkey" finished-at="2024-02-11T23:38:16 IST" duration-ms="36840" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -133,32 +132,32 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@43a09ce2]]>
+                <![CDATA[org.testng.TestRunner@24534cb0]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='productTitle']"}
-  (Session info: MicrosoftEdge=121.0.2277.83)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]"}
+  (Session info: MicrosoftEdge=121.0.2277.112)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [3ea30f861112745266ea057b95a3ef84, findElement {using=xpath, value=//span[@id='productTitle']}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51894}, msedge: {msedgedriverVersion: 121.0.2277.83 (ff4586e3b035..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51894/devtoo..., se:cdpVersion: 121.0.2277.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ea30f861112745266ea057b95a3ef84]]>
+Command: [b508feaf4cb69f321f17211278b84918, findElement {using=xpath, value=//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.112, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62993}, msedge: {msedgedriverVersion: 121.0.2277.112 (c44bb51ada3..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62993/devtoo..., se:cdpVersion: 121.0.2277.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b508feaf4cb69f321f17211278b84918]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='productTitle']"}
-  (Session info: MicrosoftEdge=121.0.2277.83)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]"}
+  (Session info: MicrosoftEdge=121.0.2277.112)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [3ea30f861112745266ea057b95a3ef84, findElement {using=xpath, value=//span[@id='productTitle']}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51894}, msedge: {msedgedriverVersion: 121.0.2277.83 (ff4586e3b035..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51894/devtoo..., se:cdpVersion: 121.0.2277.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ea30f861112745266ea057b95a3ef84
+Command: [b508feaf4cb69f321f17211278b84918, findElement {using=xpath, value=//input[@aria-labelledby="attach-sidesheet-view-cart-button-announce"]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 121.0.2277.112, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62993}, msedge: {msedgedriverVersion: 121.0.2277.112 (c44bb51ada3..., userDataDir: C:\Users\SNEHAG~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62993/devtoo..., se:cdpVersion: 121.0.2277.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b508feaf4cb69f321f17211278b84918
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -178,9 +177,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 at jdk.proxy2/jdk.proxy2.$Proxy17.getText(Unknown Source)
-at base.BasePage.getElementText(BasePage.java:44)
-at pages.ProductDetailsPage.getProductTitleOnPDP(ProductDetailsPage.java:38)
-at tests.AddToCartTests.addToCart(AddToCartTests.java:32)
+at pages.AddToCartPage.goTOCart(AddToCartPage.java:36)
+at tests.AddToCartTests.addToCart(AddToCartTests.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -215,11 +213,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.AddToCartTests@5a56cdac]" started-at="2024-01-28T17:07:38 IST" name="teardown" finished-at="2024-01-28T17:07:39 IST" duration-ms="332" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.AddToCartTests@434a63ab]" started-at="2024-02-11T23:38:16 IST" name="teardown" finished-at="2024-02-11T23:38:17 IST" duration-ms="774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.AddToCartTests -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
