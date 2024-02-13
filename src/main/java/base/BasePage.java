@@ -41,7 +41,7 @@ public class BasePage {
 	}
 	
 	public String getElementText(WebElement locator) {
-		return locator.getText();
+		return locator.getAttribute("value");
 	}
 	
 	public static void getScreenshot(WebDriver driver, String testname, String targetPath) throws IOException{

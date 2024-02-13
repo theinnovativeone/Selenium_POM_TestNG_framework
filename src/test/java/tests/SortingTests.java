@@ -1,8 +1,10 @@
 package tests;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -16,10 +18,10 @@ public class SortingTests extends BaseTest{
 	SearchingPage sp;
 	Sorting st;
 	
-	@Test(dataProvider = "searchData")
-	public void sortingLowToHighPrice(String searchkey) throws InterruptedException {
-		sp = new SearchingPage(driver);
-		st = new Sorting(driver);
+	@Test(dataProvider = "searchkey")
+	public void sortingLowToHighPrice(String searchkey, ITestContext context) throws InterruptedException, ParseException {
+		sp = new SearchingPage(context);
+		st = new Sorting(context);
 				
 		sp.search(searchkey);
 		

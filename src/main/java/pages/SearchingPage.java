@@ -32,6 +32,7 @@ public class SearchingPage extends BasePage{
 	public String getKeywordTypedInSearchBox() {
 		
 		String keyword = getElementText(searchBox);
+		
 		System.out.println("getKeywordTypedInSearchBox: " + keyword);
 		return keyword;
 	}
@@ -39,7 +40,9 @@ public class SearchingPage extends BasePage{
 	public String getKeywordForWhichSearchResultsAreShown() throws InterruptedException {
 		Thread.sleep(2000);
 		
-		String keyword = getElementText(searchResultsKeyword);
+		String keyword = (String) searchResultsKeyword.getAttribute("innerHTML");
+		int len = keyword.length();
+		keyword = keyword.substring(1, len - 1);
 		System.out.println("getKeywordForWhichSearchResultsAreShown: " + keyword);
 
 		return keyword;

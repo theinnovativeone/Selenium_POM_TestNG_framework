@@ -3,6 +3,7 @@ package tests;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,8 +16,8 @@ public class SearchingTests extends BaseTest {
 	SearchingPage sp;
 	
   @Test(dataProvider = "searchkey")
-  public void verifySearch(String searchkey) throws InterruptedException {
-	  sp = new SearchingPage(driver);
+  public void verifySearch(String searchkey, ITestContext context) throws InterruptedException {
+	  sp = new SearchingPage(context);
 	  
 	  sp.search(searchkey);
 	 

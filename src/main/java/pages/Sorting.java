@@ -1,5 +1,7 @@
 package pages;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 import base.BasePage;
 
@@ -22,7 +25,9 @@ public class Sorting extends BasePage{
 	
 	@FindBy(xpath = "//a[@id='s-result-sort-select_1']") WebElement sortingLowToHigh;
 	
-	public Sorting(WebDriver driver) {
+	public Sorting(ITestContext context) {
+		
+		WebDriver driver = (WebDriver)context.getAttribute("WebDriver");
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -32,7 +37,7 @@ public class Sorting extends BasePage{
 		clickIt(sortingLowToHigh);
 	}
 	
-	public boolean isSortedByPrice() throws InterruptedException {
+	public boolean isSortedByPrice() throws InterruptedException, ParseException {
 		Thread.sleep(2000);
 		List<WebElement> listOfPrices = driver.findElements(priceList);
 		List<Integer> listOfPricesInt = new ArrayList<Integer>();
@@ -41,10 +46,14 @@ public class Sorting extends BasePage{
 
 		System.out.println(" Actual List of prices: \n");
 		for(WebElement element:listOfPrices) {
-			Integer price = Integer.parseInt(element.getText());
+
+// Used NumberFormat to handle prices in string that contains commas. 
+// Used US locale- it removes commas in between the price.
+			Number nf = NumberFormat.getNumberInstance(java.util.Locale.US).parse(element.getText());
+			
+			Integer price = nf.intValue();
 			listOfPricesInt.add(price);
 			System.out.println(price + "\t" + "p");
-//			System.out.println("p");
 		}
 		System.out.println("p out");
 		int i =0;

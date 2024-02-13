@@ -10,6 +10,10 @@ import org.testng.ITestResult;
 import base.BasePage;
 
 public class TestListener implements ITestListener{
+	
+	public void onTestPass(ITestResult result) {
+		System.out.println("Test passed!! " + result.getMethod().getMethodName());
+	}
 
 	public void onTestFailure(ITestResult result) {
 		String targetPath = ".//FailedScreenshots//" + result.getName() + ".png";

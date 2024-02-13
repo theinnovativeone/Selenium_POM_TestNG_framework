@@ -25,9 +25,16 @@ public class BaseTest {
 	
 	@AfterMethod
 	public void teardown() {
+//		if (null != driver) {
+//			driver.quit();
+//		}
+		
 		if (null != driver) {
-			driver.quit();
+			driver.close();
 		}
+		if (driver == null) {
+	        driver.quit();
+	    }
 	}
 	
 	private static WebDriver getDriver(String browserName) {
