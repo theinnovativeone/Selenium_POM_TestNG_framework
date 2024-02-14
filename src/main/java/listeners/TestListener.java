@@ -21,7 +21,7 @@ public class TestListener implements ITestListener{
 		LocalDateTime currentDateTime = LocalDateTime.now(); 
 //		String targetPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "FailedScreenshots" + System.getProperty("file.separator") + result.getTestClass().getName() + "_" + currentDateTime + System.getProperty("file.separator") + result.getName() + ".png";
 		
-		String targetPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "FailedScreenshots" + System.getProperty("file.separator") + result.getName() + ".png";
+		String targetPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "FailedScreenshots" + System.getProperty("file.separator") + result.getTestClass().getName() + System.getProperty("file.separator") + result.getName() + ".png";
 		System.out.println("current time is: " + targetPath);
 		
 		ITestContext context = result.getTestContext();
