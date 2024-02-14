@@ -1,6 +1,7 @@
 package listeners;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -18,18 +19,20 @@ public class TestListener implements ITestListener{
 	}
 
 	public void onTestFailure(ITestResult result) {
-		LocalDateTime currentDateTime = LocalDateTime.now(); 
-//		String targetPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "FailedScreenshots" + System.getProperty("file.separator") + result.getTestClass().getName() + "_" + currentDateTime + System.getProperty("file.separator") + result.getName() + ".png";
 		
-		String targetPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "FailedScreenshots" + System.getProperty("file.separator") + result.getTestClass().getName() + System.getProperty("file.separator") + result.getName() + ".png";
-		System.out.println("current time is: " + targetPath);
+		String testclassName = result.getTestClass().getName();
+		String testmethodName = result.getName();
+		String screenshotName = testmethodName + ".png";
+		String fileseparator = System.getProperty("file.separator");
+		String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+		
+		String screenshotTargetPath = System.getProperty("user.dir") + fileseparator + "FailedScreenshots" + fileseparator + testclassName + "_" + timestamp + fileseparator + screenshotName;
 		
 		ITestContext context = result.getTestContext();
 		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
 		try {
-			BasePage.getScreenshot(driver, result.getMethod().getMethodName(), targetPath);
+			BasePage.getScreenshot(driver, result.getMethod().getMethodName(), screenshotTargetPath);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
