@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.AddToCartTests">
+      <class name="tests.SearchingTests">
         <methods>
           <include name="setUp"/>
           <include name="teardown"/>
-          <include name="addToCart" invocation-numbers="0 1"/>
+          <include name="verifySearch" invocation-numbers="1"/>
         </methods>
-      </class> <!-- tests.AddToCartTests -->
+      </class> <!-- tests.SearchingTests -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

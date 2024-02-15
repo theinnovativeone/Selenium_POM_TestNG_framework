@@ -10,16 +10,38 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.Status;
+
 import base.BasePage;
+import reporter.ExtentManager;
+import reporter.ExtentTestManager;
 
 public class TestListener implements ITestListener{
 	
+	public void onTestStart(ITestResult result) {
+		ExtentTestManager.startTest(result.getMethod().getMethodName());
+		ExtentTestManager.getTest().log(Status.INFO, "Test started: " + result.getMethod().getMethodName());
+	}
+	
+	public void onFinish(ITestContext context) {
+		ExtentTestManager.endTest();
+		ExtentManager.getInstance().flush();
+	}
+	
+	public void onStart(ITestContext context) {
+        System.out.println("*** Test Suite " + context.getName() + " started ***");
+    }
+	
 	public void onTestSuccess(ITestResult result) {
-		System.out.println("Test passed!! " + result.getMethod().getMethodName());
+		System.out.println("Test passed!!!! " + result.getMethod().getMethodName());
+		ExtentTestManager.getTest().log(Status.PASS, "Test passed: " + result.getMethod().getMethodName());
 	}
 
 	public void onTestFailure(ITestResult result) {
-		
+		System.out.println("Test failed!!!! " + result.getMethod().getMethodName());
+
+		ExtentTestManager.getTest().log(Status.FAIL, "Test failed: " + result.getMethod().getMethodName());
 		String testclassName = result.getTestClass().getName();
 		String testmethodName = result.getName();
 		String screenshotName = testmethodName + ".png";
