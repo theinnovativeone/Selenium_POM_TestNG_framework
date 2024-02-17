@@ -10,7 +10,7 @@
         <methods>
           <include name="setUp"/>
           <include name="teardown"/>
-          <include name="verifySearch" invocation-numbers="1"/>
+          <include name="verifySearch"/>
         </methods>
       </class> <!-- tests.SearchingTests -->
     </classes>

@@ -10,6 +10,8 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import org.apache.logging.log4j.Logger;
+
 
 public class BaseTest {
 
@@ -18,6 +20,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	public void setUp(ITestContext context) {
+
 		browsername = "edge";
 		driver = getDriver(browsername);
 		context.setAttribute("WebDriver", driver);
