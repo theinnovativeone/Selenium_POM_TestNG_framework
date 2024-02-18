@@ -44,6 +44,8 @@ public class TestListener implements ITestListener{
 		System.out.println("Test failed!!!! " + result.getMethod().getMethodName());
 
 		ExtentTestManager.getTest().log(Status.FAIL, "Test failed: " + result.getMethod().getMethodName());
+		ExtentTestManager.getTest().log(Status.INFO, "Error stack trace for the test: " + result.getThrowable());
+
 		String testclassName = result.getTestClass().getName();
 		String testmethodName = result.getName();
 		String screenshotName = testmethodName + ".png";
