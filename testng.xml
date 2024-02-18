@@ -10,7 +10,7 @@
 		<classes>
 			<class name="tests.SearchingTests"></class> 
 			<!-- <class name="tests.SortingTests"></class> -->
-			<!--<class name="tests.AddToCartTests"></class> -->
+			<class name="tests.AddToCartTests"></class>
 			<!-- <class name="tests.LoginTests"></class> -->
 			<!-- <class name="tests.LogoutTests"></class> -->
 		</classes>

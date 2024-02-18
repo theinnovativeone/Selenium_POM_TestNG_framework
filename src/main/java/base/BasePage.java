@@ -47,12 +47,12 @@ public class BasePage {
 		return locator.getAttribute("value");
 	}
 	
-	public static void getScreenshot(WebDriver driver, String testname, String targetPath) throws IOException{
+	public static String getScreenshot(WebDriver driver, String testmethodName, String targetPath) throws IOException{
 		TakesScreenshot screenshot = (TakesScreenshot)driver;
 		File srcfile = screenshot.getScreenshotAs(OutputType.FILE);
 		File destfile = new File(targetPath);
 		FileUtils.copyFile(srcfile, destfile);
-		
+		return targetPath;
 	}
 	
 //	public boolean checkSortingLowToHigh(List<WebElement> listLocator, WebElement locator) {
