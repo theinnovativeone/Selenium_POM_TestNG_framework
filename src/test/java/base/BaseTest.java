@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
 import org.apache.logging.log4j.Logger;
@@ -15,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 public class BaseTest {
 
-	protected WebDriver driver = null;
+	protected static WebDriver driver = null;
 	protected String browsername = null;
 	
 	@BeforeMethod
@@ -29,17 +30,8 @@ public class BaseTest {
 	}
 	
 	@AfterMethod
-	public void teardown() {
-//		if (null != driver) {
-//			driver.quit();
-//		}
-		
-		if (null != driver) {
-			driver.close();
-		}
-		if (driver == null) {
-	        driver.quit();
-	    }
+	public void closeDriver() {
+		driver.close();
 	}
 	
 	private static WebDriver getDriver(String browserName) {
