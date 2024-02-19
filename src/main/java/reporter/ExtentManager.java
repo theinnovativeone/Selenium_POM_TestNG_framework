@@ -5,6 +5,8 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import Utils.Utilities;
+import base.BasePage;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -16,12 +18,8 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
 
-	static Date date = new Date();  
-    static Timestamp ts=new Timestamp(date.getTime());  
-    static SimpleDateFormat timestamp = new SimpleDateFormat("yyyy-MM-dd HH_mm_ss");  
-        
 	private static ExtentReports extent;
-    private static String reportName = "Test-Automation-Report" +timestamp.format(ts)+ ".html";
+    private static String reportName = "Test-Automation-Report" + Utilities.getTimestamp() + ".html";
     private static String fileSeperator = System.getProperty("file.separator");
     private static String reportFilepath = System.getProperty("user.dir") + fileSeperator + "Current_test_results";
     private static String reportFileLocation =  reportFilepath + fileSeperator + reportName;
