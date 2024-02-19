@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import Utils.Utilities;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -50,9 +51,8 @@ public class TestListener implements ITestListener{
 		String testmethodName = result.getName();
 		String screenshotName = testmethodName + ".png";
 		String fileseparator = System.getProperty("file.separator");
-		String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 		
-		String screenshotTargetPath = System.getProperty("user.dir") + fileseparator + "Current_test_results" + fileseparator + "Screenshots" + fileseparator + testclassName + "_" + timestamp + fileseparator + screenshotName;
+		String screenshotTargetPath = System.getProperty("user.dir") + fileseparator + "Current_test_results" + fileseparator + "Screenshots" + fileseparator + testclassName + "_" + Utilities.getTimestamp() + fileseparator + screenshotName;
 
 		ITestContext context = result.getTestContext();
 		WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
@@ -60,7 +60,7 @@ public class TestListener implements ITestListener{
 //		capture a screenshot using getScreenshot method (defined in Base Page)
 		String targetPath = null;
 		try {
-			targetPath = BasePage.getScreenshot(driver, result.getMethod().getMethodName(), screenshotTargetPath);
+			targetPath = Utilities.getScreenshot(driver, result.getMethod().getMethodName(), screenshotTargetPath);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

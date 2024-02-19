@@ -2,6 +2,9 @@ package base;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
@@ -46,14 +49,7 @@ public class BasePage {
 	public String getElementText(WebElement locator) {
 		return locator.getAttribute("value");
 	}
-	
-	public static String getScreenshot(WebDriver driver, String testmethodName, String targetPath) throws IOException{
-		TakesScreenshot screenshot = (TakesScreenshot)driver;
-		File srcfile = screenshot.getScreenshotAs(OutputType.FILE);
-		File destfile = new File(targetPath);
-		FileUtils.copyFile(srcfile, destfile);
-		return targetPath;
-	}
+
 	
 //	public boolean checkSortingLowToHigh(List<WebElement> listLocator, WebElement locator) {
 //		
