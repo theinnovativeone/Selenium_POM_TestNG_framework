@@ -1,5 +1,6 @@
 package pages;
 
+import Utils.PropertyFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +24,12 @@ public class SearchingPage extends BasePage{
 		PageFactory.initElements(driver, this);
 	}
 	
+//	public void search() {
+//		enterText(searchBox, PropertyFileReader.getTestData("searchKeyword"));
+////		sendTextExcel(searchBox, searchkey);
+//		clickIt(searchIcon);
+//	}
+
 	public void search(String searchkey) {
 //		enterText(searchBox, "searchKeyword");
 		sendTextExcel(searchBox, searchkey);

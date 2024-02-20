@@ -1,22 +1,13 @@
 package listeners;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 import Utils.Utilities;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
-
-import base.BasePage;
 import reporter.ExtentManager;
 import reporter.ExtentTestManager;
 

@@ -17,7 +17,7 @@ public class AddToCartPage extends BasePage{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css = "#add-to-cart-button.a-button-input") WebElement AddToCartBTN;
+	@FindBy(xpath = "//input[@id=\"add-to-cart-button\"]") WebElement AddToCartBTN;
 	
 //	@FindBy(xpath = "//body/div[@id='a-page']/div[@id='dp']/div[@id='dp-container']/div[@id='ppd']/div[@id='rightCol']/div[@id='desktop_buybox']/div[@id='buybox']/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[16]/div[1]/span[1]/span[1]/span[1]/input[1]") WebElement AddToCartBTN;
 	
@@ -46,5 +46,4 @@ public class AddToCartPage extends BasePage{
 		String title = getElementText(addedProductTitle);
 		return title;
 	}
-	
 }

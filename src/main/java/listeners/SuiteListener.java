@@ -1,10 +1,8 @@
 package listeners;
 
-import Utils.Utilities;
 import org.apache.commons.io.FileUtils;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -40,7 +38,5 @@ public class SuiteListener implements ISuiteListener {
 
     public void onFinish(ISuite suite){
         System.out.println("Test suite execution is finished successfully!!");
-
-
     }
 }
