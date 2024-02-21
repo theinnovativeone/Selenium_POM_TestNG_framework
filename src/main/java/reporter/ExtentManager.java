@@ -1,6 +1,8 @@
 package reporter;
 
 import java.io.File;
+
+import Utils.PropertyFileReader;
 import Utils.Utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -35,9 +37,9 @@ public class ExtentManager {
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		
-		extent.setSystemInfo("Browser Name", "Microsoft Edge");
-		extent.setSystemInfo("Operating System", "Windows");
-		extent.setSystemInfo("App URL", "https://www.amazon.in/");
+		extent.setSystemInfo("Browser Name", PropertyFileReader.getConfigData("browser"));
+		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
+		extent.setSystemInfo("App URL", PropertyFileReader.getConfigData("url"));
 		
 		return extent;
 	}

@@ -3,6 +3,8 @@ package listeners;
 import java.io.IOException;
 import Utils.Utilities;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -12,10 +14,12 @@ import reporter.ExtentManager;
 import reporter.ExtentTestManager;
 
 public class TestListener implements ITestListener{
-	
+
+	private static final Logger logger = LogManager.getLogger(TestListener.class);
 	public void onTestStart(ITestResult result) {
 		ExtentTestManager.startTest(result.getMethod().getMethodName());
 		ExtentTestManager.getTest().log(Status.INFO, "Test started: " + result.getMethod().getMethodName());
+		logger.info("Test started: " + result.getMethod().getMethodName());
 	}
 	
 	public void onFinish(ITestContext context) {
@@ -23,17 +27,13 @@ public class TestListener implements ITestListener{
 		ExtentManager.getInstance().flush();
 	}
 	
-	public void onStart(ITestContext context) {
-        System.out.println("*** Test Suite " + context.getName() + " started ***");
-    }
-	
 	public void onTestSuccess(ITestResult result) {
-		System.out.println("Test passed!!!! " + result.getMethod().getMethodName());
+		logger.info("Test passed: " + result.getMethod().getMethodName());
 		ExtentTestManager.getTest().log(Status.PASS, "Test passed: " + result.getMethod().getMethodName());
 	}
 
 	public void onTestFailure(ITestResult result) {
-		System.out.println("Test failed!!!! " + result.getMethod().getMethodName());
+		logger.error("Test failed: " + result.getMethod().getMethodName());
 
 		ExtentTestManager.getTest().log(Status.FAIL, "Test failed: " + result.getMethod().getMethodName());
 		ExtentTestManager.getTest().log(Status.INFO, "Error stack trace for the test: " + result.getThrowable());
@@ -58,6 +58,5 @@ public class TestListener implements ITestListener{
 
 //		attach the screenshot taken with extent report
 		ExtentTestManager.getTest().info("Screenshot for failed test case: ", MediaEntityBuilder.createScreenCaptureFromPath(targetPath).build());
-
 	}
 }

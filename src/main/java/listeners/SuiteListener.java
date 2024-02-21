@@ -1,6 +1,8 @@
 package listeners;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import java.io.File;
@@ -8,11 +10,13 @@ import java.io.IOException;
 
 public class SuiteListener implements ISuiteListener {
 
+    private static final Logger logger = LogManager.getLogger(SuiteListener.class);
     static String sourcePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "Current_test_results";
     static String destinationPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "Archived_test_results";
 
     public void onStart(ISuite suite){
-        System.out.println("Suite listener onStart execution started!!");
+
+        logger.info("Test Suite has started!!");
 
         File srcDir = new File(sourcePath);
         File destinationDir = new File(destinationPath);
@@ -37,6 +41,6 @@ public class SuiteListener implements ISuiteListener {
     }
 
     public void onFinish(ISuite suite){
-        System.out.println("Test suite execution is finished successfully!!");
+        logger.info("Test suite execution is finished successfully!!");
     }
 }

@@ -18,7 +18,7 @@ public class LogoutPage extends BasePage{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void logout() {
 		mouseHover(mainMenu, driver);
 		mouseHover(signOut, driver);
