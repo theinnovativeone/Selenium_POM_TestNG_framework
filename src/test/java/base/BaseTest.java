@@ -11,6 +11,8 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.time.Duration;
+
 
 public class BaseTest {
 
@@ -29,6 +31,9 @@ public class BaseTest {
 
 		driver.manage().window().maximize();
 		logger.info("Maximized the window");
+
+		Integer implicitWait = Integer.parseInt(PropertyFileReader.getConfigData("wait_implicit"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(implicitWait));
 
 		driver.get(PropertyFileReader.getConfigData("url"));
 		logger.info("Opened the test url: " + PropertyFileReader.getConfigData("url"));

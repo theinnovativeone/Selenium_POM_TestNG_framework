@@ -12,20 +12,20 @@ import org.testng.annotations.Test;
 import Utils.XLSXutility;
 import base.BaseTest;
 import pages.SearchingPage;
-import pages.Sorting;
+import pages.SortingPage;
 import reporter.ExtentTestManager;
 
 public class SortingTests extends BaseTest{
 
 	private static final Logger logger = LogManager.getLogger(SortingTests.class);
 	SearchingPage sp;
-	Sorting st;
+	SortingPage st;
 
 	@Test(dataProvider = "searchkey")
 	public void sortingLowToHighPrice(String searchkey, ITestContext context) throws InterruptedException, ParseException {
 
 		sp = new SearchingPage(context);
-		st = new Sorting(context);
+		st = new SortingPage(context);
 
 		sp.search(searchkey);
 		logger.info("Searched the keyword: " + searchkey);

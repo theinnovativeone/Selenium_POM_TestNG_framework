@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Utils.WaitUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,7 @@ import org.testng.ITestContext;
 
 import base.BasePage;
 
-public class Sorting extends BasePage{
+public class SortingPage extends BasePage{
 	
 	protected final WebDriver driver;
 	
@@ -25,7 +26,7 @@ public class Sorting extends BasePage{
 	
 	@FindBy(xpath = "//a[@id='s-result-sort-select_1']") WebElement sortingLowToHigh;
 	
-	public Sorting(ITestContext context) {
+	public SortingPage(ITestContext context) {
 		
 		WebDriver driver = (WebDriver)context.getAttribute("WebDriver");
 		this.driver = driver;
@@ -38,7 +39,8 @@ public class Sorting extends BasePage{
 	}
 	
 	public boolean isSortedByPrice() throws InterruptedException, ParseException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+
 		List<WebElement> listOfPrices = driver.findElements(priceList);
 		List<Integer> listOfPricesInt = new ArrayList<Integer>();
 		
@@ -59,7 +61,11 @@ public class Sorting extends BasePage{
 		int i =0;
 		int j = i+1;
 		int k = j + 1;
-		
+
+		if(listOfPricesInt.size() <=1){
+			return false;
+		}
+
 		while(i< listOfPricesInt.size()- 2) {
 			if((listOfPricesInt.get(i) <= listOfPricesInt.get(j)) && (listOfPricesInt.get(j) <= listOfPricesInt.get(k))) {
 				i++;

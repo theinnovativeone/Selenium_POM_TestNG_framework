@@ -14,9 +14,7 @@ public class SearchingPage extends BasePage{
 	protected final WebDriver driver;
 	
 	@FindBy(xpath = "//input[@id=\"twotabsearchtextbox\"]") WebElement searchBox;
-	
 	@FindBy(xpath = "//input[@id=\"nav-search-submit-button\"]") WebElement searchIcon;
-	
 	@FindBy(css = "span.a-color-state.a-text-bold") WebElement searchResultsKeyword;
 	
 	public SearchingPage(ITestContext context) {
@@ -45,7 +43,7 @@ public class SearchingPage extends BasePage{
 	}
 	
 	public String getKeywordForWhichSearchResultsAreShown() throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		
 		String keyword = (String) searchResultsKeyword.getAttribute("innerHTML");
 		int len = keyword.length();
