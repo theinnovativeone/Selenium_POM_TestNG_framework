@@ -15,7 +15,7 @@ public class LoginTests extends BaseTest{
 	private static final Logger logger =LogManager.getLogger(LoginTests.class);
 	LoginPage lp;
 	
-	@Test
+	@Test (groups = {"Regression", "Sanity"})
 	public void loginValidCreds() {
 		lp = new LoginPage(driver);
 		lp.goToSignIn();
@@ -43,7 +43,7 @@ public class LoginTests extends BaseTest{
 		Assert.assertTrue(lp.isOnHomePage());
 	}
 	
-	@Test
+	@Test(groups = "Regression")
 	public void loginEmailFieldBlank() {
 		lp = new LoginPage(driver);
 

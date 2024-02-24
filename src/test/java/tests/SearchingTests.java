@@ -18,10 +18,9 @@ import reporter.ExtentTestManager;
 
 public class SearchingTests extends BaseTest {
 	private static final Logger logger = LogManager.getLogger(SearchingTests.class);
-
 	SearchingPage sp;
 
-  @Test(dataProvider = "searchkey")
+  @Test(dataProvider = "searchkey", groups = "Regression")
   public void verifySearch(String searchkey, ITestContext context) throws InterruptedException {
 
 	  sp = new SearchingPage(context);

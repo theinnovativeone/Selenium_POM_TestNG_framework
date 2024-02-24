@@ -17,7 +17,7 @@ public class LogoutTests extends BaseTest{
 	LoginPage lp;
 	LogoutPage lgp;
 	
-	@Test
+	@Test (groups = {"Regression", "Sanity"})
 	public void Logout() {
 		lp = new LoginPage(driver);
 		lgp = new LogoutPage(driver);

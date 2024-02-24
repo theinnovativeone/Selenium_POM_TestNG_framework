@@ -1,5 +1,6 @@
 package base;
 
+import Utils.FrameworkConstants;
 import Utils.PropertyFileReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,10 +21,10 @@ public class BaseTest {
 	protected static WebDriver driver = null;
 	protected String browsername = null;
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void setUp(ITestContext context) {
 
-		browsername = PropertyFileReader.getConfigData("browser");
+		browsername = FrameworkConstants.BROWSER_NAME;
 		driver = getDriver(browsername);
 		logger.info("Initialized the driver");
 
@@ -32,14 +33,14 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		logger.info("Maximized the window");
 
-		Integer implicitWait = Integer.parseInt(PropertyFileReader.getConfigData("wait_implicit"));
+		Integer implicitWait = Integer.parseInt(FrameworkConstants.WAIT_IMPLICIT);
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(implicitWait));
 
-		driver.get(PropertyFileReader.getConfigData("url"));
-		logger.info("Opened the test url: " + PropertyFileReader.getConfigData("url"));
+		driver.get(FrameworkConstants.URL);
+		logger.info("Opened the test url: " + FrameworkConstants.URL);
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeDriver() {
 		driver.close();
 		logger.info("Closed the driver instance");
