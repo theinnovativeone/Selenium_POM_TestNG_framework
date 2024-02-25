@@ -21,7 +21,7 @@ public class SortingTests extends BaseTest{
 	SearchingPage sp;
 	SortingPage st;
 
-	@Test(dataProvider = "searchkey", groups = {"Regression", "Sanity"})
+	@Test(dataProvider = "searchkey", groups = {"Regression", "Sanity"}, priority = 1)
 	public void sortingLowToHighPrice(String searchkey, ITestContext context) throws InterruptedException, ParseException {
 
 		sp = new SearchingPage(context);

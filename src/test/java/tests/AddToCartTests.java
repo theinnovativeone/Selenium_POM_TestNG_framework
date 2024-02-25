@@ -24,7 +24,7 @@ public class AddToCartTests extends BaseTest{
 	ProductDetailsPage pdp;
 	AddToCartPage acp;
 	
-	@Test(dataProvider = "searchkey", groups = {"Regression", "Sanity"})
+	@Test(dataProvider = "searchkey", groups = {"Regression", "Sanity"}, priority = 1)
 	public void addToCart(String searchkey, ITestContext context) throws InterruptedException {
 		sp = new SearchingPage(context);
 		pdp = new ProductDetailsPage(context);

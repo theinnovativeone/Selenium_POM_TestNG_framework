@@ -20,7 +20,7 @@ public class SearchingTests extends BaseTest {
 	private static final Logger logger = LogManager.getLogger(SearchingTests.class);
 	SearchingPage sp;
 
-  @Test(dataProvider = "searchkey", groups = "Regression")
+  @Test(dataProvider = "searchkey", groups = "Regression", priority = 1)
   public void verifySearch(String searchkey, ITestContext context) throws InterruptedException {
 
 	  sp = new SearchingPage(context);
